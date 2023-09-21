@@ -28,3 +28,5 @@ git branch -M main
 git push -u origin main
 ```
 You have now successfully initialized a Git repository, added files to the staging area, committed changes, and pushed those changes to a remote repository.
+
+![](git_diagram.png)

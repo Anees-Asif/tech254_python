@@ -26,5 +26,4 @@ print(ran_num)
 request_poke = requests.get("https://pokeapi.co/api/v2/pokemon/pikachu/")
 print(request_poke.status_code)
 print(request_poke.content)
-bbc_content = request_poke.content
-ucd
+

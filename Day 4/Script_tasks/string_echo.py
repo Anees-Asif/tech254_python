@@ -1,5 +1,5 @@
 import os
 
-message = "Hello, this is your script speaking!"
+message = "Hello World!"
 
 os.system(f'echo "{message}"')

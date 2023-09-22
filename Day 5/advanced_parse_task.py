@@ -11,7 +11,6 @@ def parse_json_file(file_path):
         print(f"File '{file_path}' not found.")
 
 
-
 file_path = input("Enter the path to the JSON file: ")
 
 parse_json_file(file_path)

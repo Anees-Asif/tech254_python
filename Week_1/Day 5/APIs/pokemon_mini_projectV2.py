@@ -2,9 +2,11 @@ import requests
 import json
 import random
 
+
 # Function to calculate damage in the battle
 def calculate_damage(attacker_level, defender_level):
     return random.randint(5, 15) * (attacker_level / defender_level)
+
 
 # Function to perform a round of battle
 def battle_round(attacker, defender):
@@ -13,22 +15,27 @@ def battle_round(attacker, defender):
     print(f'{attacker["name"]} attacks {defender["name"]} for {damage:.2f} damage!')
     print(f'{defender["name"]} now has {defender["hp"]:.2f} HP remaining.')
 
+
 # Function to check if the battle is over
 def is_battle_over(user, ai):
     return user['hp'] <= 0 or ai['hp'] <= 0
 
+
 # Function to swap the attacker and defender
 def swap_turn(attacker, defender):
     return defender, attacker
+
 
 # Function to perform the player's turn
 def player_turn(user, ai):
     input('Press Enter to attack...')
     battle_round(user, ai)
 
+
 # Function to perform the AI's turn
 def ai_turn(ai, user):
     battle_round(ai, user)
+
 
 # Function to display the battle result
 def display_battle_result(user, ai):
@@ -39,6 +46,7 @@ def display_battle_result(user, ai):
     else:
         print(f'\nCongratulations! You defeated AI\'s {ai["name"]}.')
 
+
 # Function to fetch a list of Pokémon with a random offset
 def get_pokemon_list():
     offset = random.randint(1, 200)  # Random offset
@@ -46,6 +54,7 @@ def get_pokemon_list():
     response = requests.get(url)
     pokemon_list = json.loads(response.text)['results']
     return pokemon_list
+
 
 # Get the list of Pokémon
 pokemon_list = get_pokemon_list()

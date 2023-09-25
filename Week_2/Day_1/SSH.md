@@ -51,3 +51,24 @@ This command generates an RSA key pair with a bit length of 2048.
 2. You can also set a passphrase to further secure your private key. This passphrase adds an extra layer of protection.
 
 3. You will now have a private key (typically named id_rsa) and a public key (typically named id_rsa.pub).
+
+## Pushing to a GitHub repository using SSH keys
+
+1. Generate SSH Key Pair as previously mentoined
+2. Add your SSH key to SSH agent
+```bash
+ # Start the SSH agent (if it's not running already)
+eval "$(ssh-agent -s)"
+
+# Add your private key to the SSH agent
+ssh-add ~/.ssh/id_rsa
+```
+3. Go to your GitHub account settings, select "SSH and GPG keys".
+4. Click on the "New SSH key" button.
+5. Give your SSH key a title and paste your public key into the "Key" field.
+6. Click the "Add SSH key" button to add the key to your GitHub account.
+7. Update the Git Remote URL
+```bash
+git remote set-url origin git@github.com:your_username/your_repo.git
+```
+8. Push to GitHub
